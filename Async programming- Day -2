@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rest Countries & Weather using fetch API</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container-fluid mt-5">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card" id="afghanistan">
+            <div class="card-body">
+              <h5 class="card-title">Afghanistan</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Country Code: AFG</h6>
+              <p class="card-text">Capital: Kabul</p>
+              <p class="card-text">Region: Asia</p>
+              <a href="#" class="card-link" id="afghanistan-weather">
+                Click for Weather
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card" id="aland-islands">
+            <div class="card-body">
+              <h5 class="card-title">Åland Islands</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Country Code: ALA</h6>
+              <p class="card-text">Region: Europe</p>
+              <p class="card-text">Name: Not Provided</p>
+              <a href="#" class="card-link" id="aland-islands-weather">
+                Click for Weather
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card" id="albania">
+            <div class="card-body">
+              <h5 class="card-title">Albania</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Country Code: ALB</h6>
+              <p class="card-text">Capital: Tirana</p>
+              <p class="card-text">Region: Europe</p>
+              <a href="#" class="card-link" id="albania-weather">
+                Click for Weather
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Fetch data from Rest Countries API
+      const restCountriesUrl = "https://restcountries.com/v3.1/all";
+      fetch(restCountriesUrl)
+        .then((response) => response.json())
+        .then((data) => {
+          // Display data for Afghanistan
+          const afghanistanData = data.find(
+            (country) => country.cca2 === "AF"
+          );
+          document.getElementById("afghanistan-capital").textContent =
+            afghanistanData.capital[0];
+          document.getElementById("afghanistan-region").textContent =
+            afghanistanData.region;
+          document.getElementById("afghanistan-flag").src =
+            afghanistanData.flags.png;
+
+          // Display data for Åland Islands
+          const aalandIslandsData = data.find(
+            (country) => country.cca2 === "AX"
+          );
+          document.getElementById(
+            "aland-islands-region"
+          ).textContent = aalandIslandsData.subregion;
+          document.getElementById("aland-islands-name").textContent =
+            aalandIslandsData.name.common;
+
+          // Display data for Albania
+          const albaniaData = data.find((country) =>
