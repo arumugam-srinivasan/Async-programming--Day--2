@@ -19,7 +19,7 @@
               <h6 class="card-subtitle mb-2 text-muted">Country Code: AFG</h6>
               <p class="card-text">Capital: Kabul</p>
               <p class="card-text">Region: Asia</p>
-              <a href="#" class="card-link" id="afghanistan-weather">
+              <a href="openweathermap.org" class="card-link" id="afghanistan-weather">
                 Click for Weather
               </a>
             </div>
@@ -32,7 +32,7 @@
               <h6 class="card-subtitle mb-2 text-muted">Country Code: ALA</h6>
               <p class="card-text">Region: Europe</p>
               <p class="card-text">Name: Not Provided</p>
-              <a href="#" class="card-link" id="aland-islands-weather">
+              <a href="openweathermap.org" class="card-link" id="aland-islands-weather">
                 Click for Weather
               </a>
             </div>
@@ -45,7 +45,7 @@
               <h6 class="card-subtitle mb-2 text-muted">Country Code: ALB</h6>
               <p class="card-text">Capital: Tirana</p>
               <p class="card-text">Region: Europe</p>
-              <a href="#" class="card-link" id="albania-weather">
+              <a href="openweathermap.org" class="card-link" id="albania-weather">
                 Click for Weather
               </a>
             </div>
